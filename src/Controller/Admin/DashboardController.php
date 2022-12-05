@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\BlogPost;
 use App\Entity\Category;
 use App\Entity\Prestations;
 use App\Entity\Reservation;
@@ -23,7 +24,7 @@ class DashboardController extends AbstractDashboardController
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
          $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-         return $this->redirect($adminUrlGenerator->setController(BlogPost2CrudController::class)->generateUrl());
+         return $this->redirect($adminUrlGenerator->setController(BlogPostCrudController::class)->generateUrl());
 
         // Option 2. You can make your dashboard redirect to different pages depending on the user
         //
@@ -45,11 +46,11 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        //        yield MenuItem::section('Blog');
-        yield MenuItem::linkToDashboard('Articles', 'fa-newspaper');
+        yield MenuItem::section('Blog');
+        yield MenuItem::linkToCrud('Articles', 'fas fa-newspaper', BlogPost::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
+        yield MenuItem::section('Consultations');
         yield MenuItem::linkToCrud('Prestations', 'fas fa-list', Prestations::class);
         yield MenuItem::linkToCrud('Reservations', 'fas fa-list', Reservation::class);
-
     }
 }
