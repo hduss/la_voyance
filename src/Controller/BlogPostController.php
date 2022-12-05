@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BlogPostController extends AbstractController
 {
-    public function __construct(private BlogPostRepository $blogPostRepository)
+    public function __construct(private readonly BlogPostRepository $blogPostRepository)
     {
     }
 

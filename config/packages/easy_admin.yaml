@@ -1,0 +1,13 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+#  entities:
+#    BlogPost:
+#      class: App\Entity\BlogPost
+#      label: Articles
+#      form:
+#        fields:
+#          - content
+#          - { property: 'content', type: 'fos_ckeditor'}
