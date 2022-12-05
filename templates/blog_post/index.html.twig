@@ -2,6 +2,9 @@
 
 {% block title %}Articles{% endblock %}
 
+{% block menu %}
+    {% include '/includes/menu.html.twig' %}
+{% endblock %}
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -14,7 +17,11 @@
     {% if posts %}
         {% for post in posts %}
             <div>
-                <p>{{ post.title }}</p>
+                <p>
+                    <a href="{{ path('app_blog_post_detail', {id: post.id}) }}">
+                    {{ post.title }}
+                    </a>
+                </p>
                 <p>{{ post.content }}</p>
             </div>
         {% endfor %}

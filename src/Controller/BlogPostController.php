@@ -26,9 +26,8 @@ class BlogPostController extends AbstractController
 //    #[Route('/blog/{page}', name: 'blog_list', requirements: ['page' => '\d+'])]
     public function detail($id): Response
     {
-        $post = $this->blogPostRepository->findBy(['id' => $id]);
-        var_dump($post);
-        var_dump($id);
-        return new Response('BlogPost detail');
-    }
+        $post = $this->blogPostRepository->findOneBy(['id' => $id]);
+        return $this->render('blog_post/detail.html.twig', [
+            'post' => $post,
+        ]);    }
 }
