@@ -25,7 +25,6 @@ class BlogPostCrudController extends AbstractCrudController
     {
         return [
             yield TextField::new('title', 'Titre de l\'article'),
-//            yield TextareaField::new('content', 'Contenu'),
             yield TextEditorField::new('content', 'Contenu')->setFormType(CKEditorType::class),
             yield AssociationField::new('category', 'Categorie associée')->setCrudController(CategoryCrudController::class),
         ];
@@ -34,7 +33,12 @@ class BlogPostCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+            ->setPageTitle(Crud::PAGE_INDEX, 'Liste des articles')
+            ->setPageTitle(Crud::PAGE_EDIT, 'Modifier un article')
+            ->setPageTitle(Crud::PAGE_NEW, 'Créer un article')
+            ->setPageTitle(Crud::PAGE_DETAIL, 'Consulter un article')
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
+            ;
     }
 
 }
