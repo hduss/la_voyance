@@ -22,7 +22,7 @@
                     {{ post.title }}
                     </a>
                 </p>
-                <p>{{ post.content }}</p>
+                <p>{{ post.content|raw }}</p>
             </div>
         {% endfor %}
     {% endif %}
