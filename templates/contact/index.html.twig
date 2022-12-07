@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Articles{% endblock %}
 
 {% block body %}
 <style>
@@ -8,13 +8,28 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block menu %}
+    {% include '/includes/menu.html.twig' %}
+{% endblock %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/la_voyance/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/la_voyance/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+<div class="example-wrapper">
+
+    {{ form_start(form, {'attr': {'class': 'pure-form pure-form-aligned'}}) }}
+    <div class="pure-control-group">
+        {{ form_errors(form) }}
+    </div>
+    <div class="pure-control-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="pure-control-group">
+        {{ form_label(form.content, 'Contenu du message') }}
+        {{ form_widget(form.content) }}
+    </div>
+    <div class="pure-control-group">
+        {{ form_row(form.submit, {'attr': {'class': 'pure-button pure-button-primary'}}) }}
+    </div>
+
+    {{ form_end(form) }}
 </div>
 {% endblock %}
