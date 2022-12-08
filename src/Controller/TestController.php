@@ -31,4 +31,15 @@ class TestController extends AbstractController
         return new Response('testController here 2');
     }
 
+
+    /**
+     * @Route("/calendar", name="app_booking_calendar", methods={"GET"})
+     */
+    #[Route('/calendar', name: 'app_booking_calendar', methods: ['GET'])]
+    public function calendar(): Response
+    {
+        return $this->render('booking/calendar.html.twig');
+    }
+
+
 }

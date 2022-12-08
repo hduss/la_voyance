@@ -52,5 +52,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Consultations');
         yield MenuItem::linkToCrud('Prestations', 'fas fa-list', Prestations::class);
         yield MenuItem::linkToCrud('Reservations', 'fas fa-list', Reservation::class);
+        yield MenuItem::linkToRoute('Calendrier', 'fas fa-list', 'app_booking_calendar_admin');
     }
 }
