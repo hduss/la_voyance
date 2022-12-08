@@ -26,7 +26,7 @@ class BlogPostCrudController extends AbstractCrudController
         return [
             yield TextField::new('title', 'Titre de l\'article'),
             yield TextEditorField::new('content', 'Contenu')->setFormType(CKEditorType::class),
-            yield AssociationField::new('category', 'Categorie associée')->setCrudController(CategoryCrudController::class),
+            yield AssociationField::new('category', 'Categories associées')->autocomplete(),
         ];
     }
 
@@ -40,5 +40,4 @@ class BlogPostCrudController extends AbstractCrudController
             ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
             ;
     }
-
 }
