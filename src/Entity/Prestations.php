@@ -32,6 +32,9 @@ class Prestations
     #[ORM\OneToOne(mappedBy: 'prestation', cascade: ['persist', 'remove'])]
     private ?Reservation $reservation = null;
 
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $during_time = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -115,6 +118,18 @@ class Prestations
         }
 
         $this->reservation = $reservation;
+
+        return $this;
+    }
+
+    public function getDuringTime(): ?\DateTimeInterface
+    {
+        return $this->during_time;
+    }
+
+    public function setDuringTime(\DateTimeInterface $during_time): self
+    {
+        $this->during_time = $during_time;
 
         return $this;
     }
