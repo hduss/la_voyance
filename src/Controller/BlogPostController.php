@@ -23,7 +23,6 @@ class BlogPostController extends AbstractController
     }
 
     #[Route('/blog/post/{id}', name: 'app_blog_post_detail', requirements: ['id' => '\d+'])]
-//    #[Route('/blog/{page}', name: 'blog_list', requirements: ['page' => '\d+'])]
     public function detail($id): Response
     {
         $post = $this->blogPostRepository->findOneBy(['id' => $id]);

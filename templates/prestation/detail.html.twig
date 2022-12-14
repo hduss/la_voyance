@@ -14,8 +14,12 @@
     <div class="example-wrapper">
         <h1>{{ prestation.name }}</h1>
         <div>
+            {{ dump(prestation) }}
             <p>{{ prestation.description }}</p>
             <p>{{ prestation.longDescription }}</p>
+            <form action="{{ path('app_booking', {id: prestation.id}) }}">
+                <button type="submit">Réserver</button>
+            </form>
         </div>
     </div>
 {% endblock %}

@@ -15,6 +15,9 @@
                 </p>
                 <p>{{ prestation.description }}</p>
                 <p>{{ prestation.longDescription }}</p>
+                <a href="{{ path('app_blog_prestation_detail', {id: prestation.id}) }}">
+                    Réserver la {{ prestation.name|lower }}
+                </a>
             </div>
         {% endfor %}
     {% endif %}

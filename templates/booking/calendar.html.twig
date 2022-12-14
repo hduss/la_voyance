@@ -1,4 +1,5 @@
 {% extends '@!EasyAdmin/layout.html.twig' %}
+
 {% block main %}
 {#    <a href="{{ path('app_booking_new') }}">Create new booking</a>#}
     <div id="calendar-holder"></div>
@@ -18,12 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.js"></script>
 
     <script type="text/javascript">
+
         document.addEventListener('DOMContentLoaded', () => {
             var calendarEl = document.getElementById('calendar-holder');
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 defaultView: 'dayGridMonth',
                 editable: true,
+                selectable: true,
                 eventSources: [
                     {
                         url: "{{ path('fc_load_events') }}",

@@ -23,7 +23,7 @@ class ContactType extends AbstractType
                 'required' => true
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer moi un message'
+                'label' => 'Envoyer un message'
             ])
         ;
     }
