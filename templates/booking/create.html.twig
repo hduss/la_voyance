@@ -6,8 +6,40 @@
 
 <div>
     {{ form_start(form, {'attr': {'class': 'pure-form pure-form-stacked'}}) }}
-    {#    {{ form_row(form.name) }}#}
+    <fieldset>
+        <div>
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            <span class="pure-form-message error-message">{{ form_errors(form.name) }}</span>
+        </div>
+        <div>
+            {{ form_label(form.lastname) }}
+            {{ form_widget(form.lastname) }}
+            <span class="pure-form-message error-message">{{ form_errors(form.lastname) }}</span>
+        </div>
+        <div>
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+            <span class="pure-form-message error-message">{{ form_errors(form.email) }}</span>
+        </div>
+        <div>
+            {{ form_label(form.phone) }}
+            {{ form_widget(form.phone) }}
+            <span class="pure-form-message error-message">{{ form_errors(form.phone) }}</span>
+        </div>
+        <div>
+            {{ form_label(form.date.date) }}
+            {{ form_widget(form.date.date) }}
+        </div>
+        <div>
+            {{ form_label(form.date.time) }}
+            {{ form_widget(form.date.time, {'attr': {'step': '1800'}}) }}
+            <span class="pure-form-message error-message">{{ form_errors(form.date) }}</span>
+        </div>
+        <div>
+            {{ form_row(form.submit, {'attr': {'class': 'pure-button pure-button-primary'}}) }}
+        </div>
+    </fieldset>
     {{ form_end(form) }}
 </div>
-
 {% endblock %}
