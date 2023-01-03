@@ -5,10 +5,12 @@ namespace App\Form;
 use App\Entity\Reservation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
@@ -46,6 +48,12 @@ class BookingType extends AbstractType
                 'required' => true,
                 'label' => 'Numéro de téléphone'
             ])
+            ->add('timeTest', TimeType::class, [
+                'mapped' => false
+            ])
+            ->add('dateTest', DateType::class, [
+                'mapped' => false
+            ])
             ->add('date', DateTimeType::class, [
                 'data' => $now,
                 'attr' => ['min' => $now],
@@ -55,7 +63,7 @@ class BookingType extends AbstractType
                 ],
                 'date_widget' => 'single_text',
                 'date_label' => 'Date',
-                'time_widget' => 'single_text',
+                'time_widget' => 'choice',
                 'time_label' => 'Heure',
                 'view_timezone' => 'Europe/Paris',
                 'required' => true
