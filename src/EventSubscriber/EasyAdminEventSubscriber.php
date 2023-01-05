@@ -4,11 +4,12 @@
 namespace App\EventSubscriber;
 
 use App\Entity\BlogPost;
+use App\Entity\Prestations;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class BlogPostSubscriber implements EventSubscriberInterface
+class EasyAdminEventSubscriber implements EventSubscriberInterface
 {
 
 
@@ -33,11 +34,16 @@ class BlogPostSubscriber implements EventSubscriberInterface
     public function setBlogPost(BeforeEntityPersistedEvent $event): void
     {
         $entity = $event->getEntityInstance();
-        if (!($entity instanceof BlogPost)) {
-            return;
+        if ($entity instanceof BlogPost) {
+            $entity->setCreatedDate($this->dateNow);
+            $entity->setUpdatedDate($this->dateNow);
+        }elseif($entity instanceof Prestations){
+            $entity->setCreatedAt($this->dateNow);
+            $entity->setUpdatedAt($this->dateNow);
+//            var_dump($this->dateNow->format('H:i:s'));
+//            die('test time');
+//            $entity->setDuringTime($this->dateNow->format('H:i:s'));
         }
-        $entity->setCreatedDate($this->dateNow);
-        $entity->setUpdatedDate($this->dateNow);
     }
 
     /**
@@ -51,5 +57,14 @@ class BlogPostSubscriber implements EventSubscriberInterface
             return;
         }
         $entity->setUpdatedDate($this->dateNow);
+    }
+
+    public function setPrestations(BeforeEntityPersistedEvent $event): void
+    {
+        $entity = $event->getEntityInstance();
+        if (!($entity instanceof Pestations)) {
+            return;
+        }
+
     }
 }
