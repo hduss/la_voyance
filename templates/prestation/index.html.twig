@@ -5,18 +5,23 @@
     {% include '/includes/menu.html.twig' %}
 {% endblock %}
 {% block body %}
+
+    <h1>Mes préstations</h1>
     {% if prestations %}
         {% for prestation in prestations %}
-            <div>
-                <p>
+            <div class="app-content-prestation">
+                <h2>
                     <a href="{{ path('app_blog_prestation_detail', {id: prestation.id}) }}">
                         {{ prestation.name }}
                     </a>
-                </p>
+                </h2>
                 <p>{{ prestation.description }}</p>
                 <p>{{ prestation.longDescription }}</p>
                 <a href="{{ path('app_blog_prestation_detail', {id: prestation.id}) }}">
-                    Réserver la {{ prestation.name|lower }}
+                    <button class="pure-button app-pure-button-violet">
+{#                        Réserver la {{ prestation.name|lower }}#}
+                        Réserver la consultation
+                    </button>
                 </a>
             </div>
         {% endfor %}

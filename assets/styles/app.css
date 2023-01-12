@@ -1,23 +1,93 @@
-/*body {*/
-/*    background-color: lightgray;*/
-/*}*/
+
+:root {
+    --main-violet-color: rgba(161, 71, 170, 0.69);
+}
 
 @font-face {
     font-family: "Moon dance";
     src: url(../fonts/Moon_Dance/MoonDance-Regular.ttf) format("TrueType");
 }
 
+body{
+    /*background-color: lavender;*/
+}
+.customFont {
+    font-family: "Moon dance", Verdana, Tahoma, serif;
+}
+
+.app-pure-button-violet{
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--main-violet-color);
+}
+
+/*body {*/
+/*    background-color: lightgray;*/
+/*}*/
+
+#app-menu a{
+    color: inherit;
+    text-decoration: none;
+}
+
+#app-container-background{
+    height: 500px;
+    background-position-x: center;
+    background-position-y: bottom;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+}
+
+#app-container-title{
+    text-align: center;
+    margin-top: 6rem;
+    color: white;
+}
 
 #app-main-title{
     font-family: 'Moon dance';
+    font-size: 7rem !important;
+    font-weight: bold;
 }
 
 #app-menu{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    font-size: 2.7rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: white;
+    /*background-color: #1D242A;*/
+    /*width: 45%;*/
+    /*margin-left: auto;*/
+    /*border-bottom: 2px solid white;*/
 }
 
-.customFont {
-    font-family: "Moon dance", Verdana, Tahoma, serif;
+#app-menu div{
+    margin: 1.5rem;
 }
+
+#app-menu div:hover{
+    color: var(--main-violet-color);
+}
+
+#app-container-section{
+    margin-top: 8rem;
+}
+
+.app-content-prestation{
+    margin-top: 5rem;
+    margin-bottom: 7rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid lightgray;
+}
+
+footer{
+    text-align: center;
+    margin-top: 8rem;
+}
+
+
 

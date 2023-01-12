@@ -1,66 +1,37 @@
 
-{#<div class="pure-menu pure-menu-horizontal">#}
-{#    <a href="#" class="pure-menu-heading pure-menu-link">BRAND</a>#}
-{#    <ul class="pure-menu-list">#}
-{#        <li class="pure-menu-item">#}
-{#            <a href="#" class="pure-menu-link">News</a>#}
-{#        </li>#}
-{#        <li class="pure-menu-item">#}
-{#            <a href="#" class="pure-menu-link">Sports</a>#}
-{#        </li>#}
-{#        <li class="pure-menu-item">#}
-{#            <a href="#" class="pure-menu-link">Finance</a>#}
-{#        </li>#}
-{#    </ul>#}
-{#</div>#}
 
-<div>
-    <img src="{{ asset('img/app-background-wallpaper.jpg/') }}" alt="astrology background wallpaper">
-</div>
-<div id="app-main-title">
-    <h1>La voyance et Guidance d'Ambre</h1>
-</div>
-<div id="app-menu">
-    <div>
-        <a class="customFont" href="{{ path('app_home') }}">Accueil</a>
+<div id="app-container-background" style="background-image: url({{ asset('img/pexels-lucas-pezeta-4337135.jpg') }});">
+    <div id="app-container-title">
+        <h1 id="app-main-title">La voyance et Guidance d'Ambre</h1>
     </div>
-    <div>
-        <a href="{{ path('app_prestations') }}">Prestations</a>
-    </div>
-    <div>
-        <a href="{{ path('app_blog_post') }}">Blog</a>
-    </div>
-    <div>
-        <a href="{{ path('app_contact') }}">Contact</a>
+    <div id="app-menu">
+        <div>
+            <a class="customFont" href="{{ path('app_home') }}">Accueil</a>
+        </div>
+        <div>
+            <a class="customFont" href="{{ path('app_prestations') }}">Prestations</a>
+        </div>
+        <div>
+            <a class="customFont" href="{{ path('app_blog_post') }}">Blog</a>
+        </div>
+        <div>
+            <a class="customFont" href="{{ path('app_contact') }}">Contact</a>
+        </div>
     </div>
 </div>
 
-<div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading pure-menu-link">BRAND</a>
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">News</a>
-        </li>
-        <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">Sports</a>
-        </li>
-        <li class="pure-menu-item">
-            <a href="#" class="pure-menu-link">Finance</a>
-        </li>
-    </ul>
-</div>
 
-<ul>
-    <li>
-        <a href="{{ path('app_home') }}">Accueil</a>
-    </li>
-    <li>
-        <a href="{{ path('app_prestations') }}">Prestations</a>
-    </li>
-    <li>
-        <a href="{{ path('app_blog_post') }}">Blog</a>
-    </li>
-    <li>
-        <a href="{{ path('app_contact') }}">Contact</a>
-    </li>
-</ul>
+{#<ul>#}
+{#    <li>#}
+{#        <a href="{{ path('app_home') }}">Accueil</a>#}
+{#    </li>#}
+{#    <li>#}
+{#        <a href="{{ path('app_prestations') }}">Prestations</a>#}
+{#    </li>#}
+{#    <li>#}
+{#        <a href="{{ path('app_blog_post') }}">Blog</a>#}
+{#    </li>#}
+{#    <li>#}
+{#        <a href="{{ path('app_contact') }}">Contact</a>#}
+{#    </li>#}
+{#</ul>#}
